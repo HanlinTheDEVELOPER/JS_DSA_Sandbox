@@ -1,3 +1,17 @@
-function titleCase() {}
+function titleCase(string) {
+  const strToArr = string.toLowerCase().split(" ");
+  const newArrWithTitleCase = strToArr.map((word) => {
+    let newWord = "";
+    for (let i = 0; i < word.length; i++) {
+      if (i === 0) {
+        newWord += word[i].toUpperCase();
+      } else {
+        newWord += word[i];
+      }
+    }
+    return newWord;
+  });
+  return newArrWithTitleCase.join(" ");
+}
 
 module.exports = titleCase;
